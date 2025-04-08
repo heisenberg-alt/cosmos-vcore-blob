@@ -1,0 +1,47 @@
+# Ignore environment variable files
+.env
+
+# Ignore Python cache files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment folders
+venv/
+env/
+.venv/
+
+# Ignore log files
+*.log
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore compiled files
+*.pyc
+*.pyo
+
+# Ignore Azure Function artifacts
+local.settings.json
+bin/
+obj/
+
+# Ignore node_modules for JavaScript/Node.js projects
+node_modules/
+
+# Ignore coverage reports
+coverage/
+*.coverage
+
+# Azurite artifacts
+__blobstorage__
+__queuestorage__
+__azurite_db*__.json
+
+# Ignore JavaScript package files
+package.json
+package-lock.json

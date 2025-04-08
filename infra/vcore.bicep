@@ -1,5 +1,5 @@
 @description('Azure Cosmos DB MongoDB vCore cluster name')
-@maxLength(44)
+@maxLength(40)
 param clusterName string = 'msdocs-${uniqueString(resourceGroup().id)}'
 
 @description('Location for the cluster.')
@@ -14,7 +14,7 @@ param adminUsername string
 @maxLength(128)
 param adminPassword string
 
-resource cluster 'Microsoft.DocumentDB/mongoClusters@2022-10-15-preview' = {
+resource cluster 'Microsoft.DocumentDB/mongoClusters@2023-03-15-preview' = {
   name: clusterName
   location: location
   properties: {
@@ -23,7 +23,7 @@ resource cluster 'Microsoft.DocumentDB/mongoClusters@2022-10-15-preview' = {
     nodeGroupSpecs: [
         {
             kind: 'Shard'
-            shardCount: 1
+            nodeCount: 1
             sku: 'M40'
             diskSizeGB: 128
             enableHa: false
@@ -32,7 +32,7 @@ resource cluster 'Microsoft.DocumentDB/mongoClusters@2022-10-15-preview' = {
   }
 }
 
-resource firewallRules 'Microsoft.DocumentDB/mongoClusters/firewallRules@2022-10-15-preview' = {
+resource firewallRules 'Microsoft.DocumentDB/mongoClusters/firewallRules@2023-03-15-preview' = {
   parent: cluster
   name: 'AllowAllAzureServices'
   properties: {
@@ -40,3 +40,4 @@ resource firewallRules 'Microsoft.DocumentDB/mongoClusters/firewallRules@2022-10
     endIpAddress: '0.0.0.0'
   }
 }
+

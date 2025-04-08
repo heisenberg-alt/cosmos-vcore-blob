@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Variables
-SUBSCRIPTION_ID="your-subscription-id"
-
 # Login to Azure
 az login
 

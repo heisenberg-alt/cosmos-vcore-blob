@@ -3,7 +3,7 @@
 # Variables
 RESOURCE_GROUP="myResourceGroup"
 LOCATION="eastus"
-BICEP_FILE="main.bicep"
+BICEP_FILE="vcore.bicep"
 
 # Login to Azure
 az login

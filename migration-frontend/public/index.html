@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0078D4" />
+    <meta
+      name="description"
+      content="Migration App - CosmosDB to Blob Storage"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Migration App - CosmosDB vCore to Blob Storage</title>
+    <style>
+      /* Microsoft Theme Styles */
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f3f2f1;
+        color: #333;
+      }
+
+      header {
+        background-color: #0078D4;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      header p {
+        margin: 5px 0 0;
+        font-size: 1rem;
+        font-weight: 300;
+      }
+
+      main {
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      main h2 {
+        font-size: 1.5rem;
+        color: #0078D4;
+        margin-bottom: 20px;
+      }
+
+      main p {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+      }
+
+      footer {
+        background-color: #0078D4;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      footer p {
+        margin: 0;
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1rem;
+        color: white;
+        background-color: #0078D4;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .button:hover {
+        background-color: #005a9e;
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>vCoreBridge - 1.0</h1>
+      <p>CosmosDB vCore Data Export Wizard</p>
+    </header>
+    <main>
+      <h2>Welcome to the vCore Wizard</h2>
+      <p style="font-family: 'Arial', sans-serif; font-size: 1.2rem; line-height: 1.8; color: #444;">
+        This application helps you export data from CosmosDB vCore to Azure Blob Storage, Azure AI Search seamlessly.
+        <br />
+        Choose one of the options from the Menu to get started.
+      </p>
+    </main>
+    <div id="root"></div>
+    <footer>
+      <p>
+        Powered by <a href="https://azure.microsoft.com/" target="_blank">Microsoft Azure</a>
+      </p>
+    </footer>
+  </body>
+</html>
