@@ -11,6 +11,7 @@ import time  # For pause functionality
 from dotenv import load_dotenv
 load_dotenv()
 
+
 app = Flask(__name__)
 CORS(app)  # Enable CORS for cross-origin requests
 
@@ -35,7 +36,7 @@ container_client = blob_service_client.get_container_client(container_name)
 
 logging.basicConfig(level=logging.DEBUG)
 
-# Endpoint to schedule the Azure Function trigger
+# Endpoint to schedule the Azure Function trigger 
 @app.route('/schedule-trigger', methods=['POST'])
 def schedule_trigger():
     try:
@@ -125,6 +126,7 @@ def start_migration():
             collection = db[mongo_collection]
             yield "data: Connected to MongoDB.\n\n"
             logging.debug("Connected to MongoDB.")
+        
 
             # Fetch documents from MongoDB
             total_docs = collection.count_documents({})
