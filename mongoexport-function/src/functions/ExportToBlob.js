@@ -1,15 +1,15 @@
 const { app } = require('@azure/functions');
 const { exec } = require("child_process");
-const { BlobServiceClient } = require("@azure/storage-blob");
+const { BlobServiceClient, logger } = require("@azure/storage-blob");
 require("dotenv").config(); // Load environment variables from .env file
 
 // MongoDB and Azure Blob Storage configuration from environment variables
-const mongoUri = process.env.MONGO_URI;
-const databaseName = process.env.DATABASE_NAME || "blob-test";
-const collectionName = process.env.COLLECTION_NAME || "mycollection";
-const blobStorageConnectionString = process.env.BLOB_STORAGE_CONNECTION_STRING;
-const containerName = process.env.CONTAINER_NAME || "mongo-exports";
-const blobName = process.env.BLOB_NAME || "export.json";
+const mongoUri = process.env.MONGO_URI 
+const databaseName = process.env.MONGO_DB 
+const collectionName = process.env.MONGO_COLLECTION 
+const blobStorageConnectionString = process.env.BLOB_STORAGE_CONNECTION_STRING 
+const containerName = process.env.CONTAINER_NAME 
+const blobName = process.env.BLOB_NAME 
 
 // Function to export MongoDB documents directly to Azure Blob Storage
 async function exportMongoToBlob(context) {
@@ -29,7 +29,7 @@ async function exportMongoToBlob(context) {
         context.log("Running command:", command);
 
         // Execute the mongoexport command
-        const childProcess = exec(command, { maxBuffer: 1024 * 1024 * 10 }); // Increase buffer size if needed
+        const childProcess = exec(command, { maxBuffer: 1024 * 1024 * 50 }); // Increase buffer size if needed
 
         // Upload the output of mongoexport directly to Azure Blob Storage
         const uploadPromise = new Promise((resolve, reject) => {
@@ -47,7 +47,7 @@ async function exportMongoToBlob(context) {
                 }
             });
 
-            blobClient.uploadStream(childProcess.stdout, 4 * 1024 * 1024, 20, {
+            blobClient.uploadStream(childProcess.stdout, 4 * 1024 * 1024, 50, {
                 onProgress: (progress) => {
                     context.log(`Uploaded ${progress.loadedBytes} bytes to Azure Blob Storage.`);
                 },

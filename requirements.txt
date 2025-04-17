@@ -1,3 +1,11 @@
 azure-functions
 requests
 croniter
+pymongo==4.5.0
+
+Flask
+flask-cors
+pymongo
+azure-storage-blob
+python-dotenv
+requests

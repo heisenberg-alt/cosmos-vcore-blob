@@ -4,12 +4,12 @@ const { BlobServiceClient } = require("@azure/storage-blob");
 require("dotenv").config(); // Load environment variables from .env file
 
 // MongoDB and Azure Blob Storage configuration from environment variables
-const mongoUri = process.env.MONGO_URI;
-const databaseName = process.env.DATABASE_NAME || "blob-test";
-const collectionName = process.env.COLLECTION_NAME || "mycollection";
-const blobStorageConnectionString = process.env.BLOB_STORAGE_CONNECTION_STRING;
-const containerName = process.env.CONTAINER_NAME || "mongo-exports";
-const blobName = process.env.BLOB_NAME || "export.json";
+const mongoUri = process.env.MONGO_URI 
+const databaseName = process.env.MONGO_DB 
+const collectionName = process.env.MONGO_COLLECTION 
+const blobStorageConnectionString = process.env.BLOB_STORAGE_CONNECTION_STRING 
+const containerName = process.env.CONTAINER_NAME 
+const blobName = process.env.BLOB_NAME 
 
 // Function to export MongoDB documents directly to Azure Blob Storage
 function mongoTriggerFunction(context) {

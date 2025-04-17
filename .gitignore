@@ -26,7 +26,6 @@ Thumbs.db
 *.pyo
 
 # Ignore Azure Function artifacts
-local.settings.json
 bin/
 obj/
 
@@ -43,5 +42,4 @@ __queuestorage__
 __azurite_db*__.json
 
 # Ignore JavaScript package files
-package.json
 package-lock.json
